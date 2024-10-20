@@ -2,7 +2,7 @@ import React from 'react'
 
 const Mailer = () => {
   return (
-    <div>Mailer</div>
+    <div className="text-white">Mailer</div>
   )
 }
 
