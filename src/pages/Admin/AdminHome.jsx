@@ -1,13 +1,13 @@
-import React from 'react'
-import {Routes, Route} from 'react-router-dom'
-import History from './History'
-import EmployeList from './EmployeList'
-import Sidebar from '../../Component/Sidebar'
-import Navbar from '../../Component/Navbar'
-import Footer from '../../Component/Footer'
-import Dashboard from './Dashboard'
-import AddEmploy from './AddEmploy'
-import Mailer from './Mailer'
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import History from './History';
+import EmployeList from './EmployeList';
+import Sidebar from '../../Component/Sidebar';
+import Navbar from '../../Component/Navbar';
+import Footer from '../../Component/Footer';
+import Dashboard from './Dashboard';
+import AddEmploy from './AddEmploy';
+import Mailer from './Mailer';
 const AdminHome = () => {
   return (
     <div>
@@ -25,9 +25,8 @@ const AdminHome = () => {
              </div>
             </div>
             <Footer />
+      </div>
+  );
+};
 
-    </div>
-  )
-}
-
-export default AdminHome
+export default AdminHome;

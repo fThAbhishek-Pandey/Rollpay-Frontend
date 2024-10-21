@@ -1,10 +1,10 @@
 import React from 'react'
-import logo from './Image/1.png';
-import logo1 from './Image/logo.png';
+// import logo from './Image/1.png';
+// import logo1 from './Image/logo.png';
 const Footer = () => {
   return (
     <footer className="bg-black text-gray-400 m-0">
-        <div className="container mx-auto py-10 px-1">
+        {/* <div className="container mx-auto py-10 px-1">
           <div className="flex justify-between items-start">
             <div>
               <img src={logo} alt="LOGO" />
@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="flex justify-between items-center">
             <p className="text-gray-500">© Copyright. All rights reserved.</p>
           </div>
-        </div>
+        </div> */}
       </footer>
   )
 }
