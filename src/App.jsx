@@ -6,7 +6,7 @@ import AdminHome from './pages/Admin/AdminHome'
 import HomeCoAdmin from './pages/CoAdmin/HomeCoAdmin'
 import { ToastContainer, toast } from 'react-toastify';
 function App() {
-const {admin_token} = useContext( AdminContext)
+const {adminToken} = useContext( AdminContext)
 const {coAdmin_token} = useContext(CoAdminContext);
 const notify = () => toast("Wow so easy!");
 useEffect (()=>{
@@ -15,10 +15,10 @@ useEffect (()=>{
   return (
     <>
       {
-          !(admin_token || coAdmin_token ) 
+          !(adminToken || coAdmin_token ) 
           ? <Login />
           : <div>
-            {admin_token && <AdminHome /> }
+            {adminToken && <AdminHome /> }
             {coAdmin_token&& <HomeCoAdmin /> }
           </div>
 

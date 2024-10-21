@@ -1,12 +1,21 @@
 import { createContext, useState } from "react";
-
+import onLoginHandleAdmin from "../Component/Context/Admin/onHandelLogin";
+import { useNavigate } from 'react-router-dom'
 export const AdminContext = createContext(1);
 
 const  AdminContextProvider = (props) => {
-  const [admin_token, setAdminToken] = useState(1);
+  const [adminToken, setAdminToken] = useState(localStorage.getItem('adminToken')||'');
+  const navigate= useNavigate();
+  const backendURL= import.meta.env.VITE_BACKEND_URL
+  console.log(backendURL)
+ const handleLoginAdmin = async (email, password)=>{
+        await onLoginHandleAdmin (setAdminToken,backendURL,email, password,navigate )
+ }
+
      const value = {
-        admin_token,
-        setAdminToken
+        adminToken,
+        setAdminToken,
+        handleLoginAdmin
      }
   return (
     <>
