@@ -1,18 +1,15 @@
-import React from 'react'
 
+import React,  { useContext }  from 'react'
+import { AdminContext } from '../Context/AdminContext'
 const Navbar = () => {
+  const {handelLogout} = useContext(AdminContext);
   return (
-    <div>
-      <nav class=" flex justify-between">
+      <nav class="flex justify-between m-5">
         <div class="flex gap-2">
-            <h1 class="text-4xl">Admin Panal</h1>
+            <h1 class="text-4xl border-4 bg-slate-50 rounded-lg ">Admin Panal</h1>
         </div>
-        <button class="hidden md:block text-2xl bg-indigo-500 rounded-md px-2 cursor-pointer">Logout</button>
-        <div class="md:hidden">
-            <a class="text-4xl " href="#">&#8801;</a>
-        </div>
+        <button onClick={handelLogout} class="block text-xl bg-indigo-500 rounded-md px-2 cursor-pointer">Logout</button>
     </nav>
-    </div>
   )
 }
 
