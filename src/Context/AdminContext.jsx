@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import onLoginHandleAdmin from "../Component/Context/Admin/onHandelLogin";
 import { useNavigate } from 'react-router-dom'
+import onLogoutHandel from "../Component/Context/Admin/onLogoutHandel";
 export const AdminContext = createContext(1);
 
 const  AdminContextProvider = (props) => {
@@ -11,11 +12,14 @@ const  AdminContextProvider = (props) => {
  const handleLoginAdmin = async (email, password)=>{
         await onLoginHandleAdmin (setAdminToken,backendURL,email, password,navigate )
  }
-
+const handelLogout = ()=>{
+  onLogoutHandel(setAdminToken,navigate)
+}
      const value = {
         adminToken,
         setAdminToken,
-        handleLoginAdmin
+        handleLoginAdmin,
+        handelLogout
      }
   return (
     <>
