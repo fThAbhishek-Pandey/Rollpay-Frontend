@@ -17,7 +17,7 @@ const AdminHome = () => {
              <div>
               <Routes>
                 <Route path='/' element={<Dashboard/>} />
-                <Route path='' element={<Mailer/>} />
+                <Route path='/mailer' element={<Mailer/>} />
                 <Route path='/add-employ' element={<AddEmploy/>} />
                 <Route path='/employee-list' element={<EmployeList/>} />
                 <Route path='/history' element={<History/>} />
