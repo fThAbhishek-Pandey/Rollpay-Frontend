@@ -4,7 +4,7 @@ import { AdminContext } from '../Context/AdminContext'
 const Navbar = () => {
   const {handelLogout} = useContext(AdminContext);
   return (
-      <nav class="flex justify-between m-5">
+      <nav class="bg-slate-100 flex justify-between m-5">
         <div class="flex gap-2">
             <h1 class="text-4xl border-4 bg-slate-50 rounded-lg ">Admin Panal</h1>
         </div>
