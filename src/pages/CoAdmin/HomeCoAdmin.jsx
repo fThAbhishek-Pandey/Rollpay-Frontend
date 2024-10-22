@@ -1,8 +1,27 @@
 import React from 'react'
-
+import { Routes, Route } from 'react-router-dom'
+import Employee from './Employee'
+import EmployeeForm from './EemployeeForm'
+import Navbar from '../../Component/Navbar'
+import Dashboard from './Dashboard'
+import Sidebar from '../../Component/CoAdmin/sidebar'
+import Footer from '../../Component/Footer'
 const HomeCoAdmin = () => {
   return (
-    <div>HomeCoAdmin</div>
+    <div>
+         <Navbar/>
+         <div className='flex'>
+          <Sidebar />
+          <div>
+         <Routes>
+          <Route path='/' element={<Dashboard/>}></Route>
+          <Route path='/employee' element={<Employee/>}></Route>
+          <Route path='/profile/:epm_id' element={<EmployeeForm/>}></Route>
+        </Routes>
+         </div>
+         </div>
+         <Footer />
+    </div>
   )
 }
 
