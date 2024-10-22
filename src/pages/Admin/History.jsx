@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{useContext, useEffect} from 'react'
+import { AdminContext } from '../../Context/AdminContext'
 
 const History = () => {
-  return (
-    <div >History</div>
+  const { handelRecieptHistory, reciptHistory } = useContext(AdminContext);
+  useEffect(()=>{
+       handelRecieptHistory ()
+  }, [])
+  console.log("history Data : ",reciptHistory)
+  return reciptHistory && (
+    <div >{"reciptHistory"}</div>
   )
 }
 
