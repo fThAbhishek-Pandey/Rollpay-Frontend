@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import History from './History';
 import EmployeList from './EmployeList';
-import Sidebar from '../../Component/Sidebar';
+import Sidebar from '../../Component/Admin/Sidebar';
 import Navbar from '../../Component/Navbar';
 import Footer from '../../Component/Footer';
 import Dashboard from './Dashboard';

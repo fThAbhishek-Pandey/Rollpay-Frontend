@@ -1,19 +1,32 @@
 import React, { useState , useContext} from "react";
 import { AdminContext } from "../Context/AdminContext";
+import { CoAdminContext } from "../Context/CoAdmin";
 const Login = () => {
+  const [mode, setMode] = useState('Admin');
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const {handleLoginAdmin } = useContext(AdminContext);
+  const {handleLoginCoAdmin} = useContext(CoAdminContext)
+  const ChangeMode = ()=>{
+          if(mode === 'Admin') setMode('coAdmin')
+          else setMode('Admin')
+  }
+  
   const handleLogin = (e) => {
     e.preventDefault();
     handleLoginAdmin(username,password);
   };
+  const handleCoAdmin = (e) => {
+    e.preventDefault();
+    handleLoginCoAdmin(username,password);
+  };
+
   return (
     <div className="flex h-screen justify-center items-center bg-gray-100">
       <div className="border p-8 bg-white rounded-md shadow-lg">
         {(
-          <form onSubmit={handleLogin} className="space-y-4">
-            <h2 className="text-2xl font-bold text-center">Admin Panel</h2>
+          <form onSubmit={mode ==='Admin' ?handleLogin : handleCoAdmin} className="space-y-4">
+            <h2 className="text-2xl font-bold text-center"> { mode === 'Admin'? 'Admin' :'CoAdmin'} Panel</h2>
             <div>
               <label className="block text-sm font-medium text-gray-700">Username</label>
               <input
@@ -42,6 +55,7 @@ const Login = () => {
             </button>
           </form>
         )}
+        <div onClick={ChangeMode} className="mt-5" >Login as <span className="text-blue-400">{mode ==='Admin'?'CoAdmin':'Admin'}</span></div>
       </div>
     </div>
   );
