@@ -1,5 +1,5 @@
 const onLogoutHandel = (setCotoken,navigate)=>{
-    localStorage.removeItem('coToken');
+    localStorage.removeItem('cotoken');
     setCotoken('')
     navigate('/')
 }

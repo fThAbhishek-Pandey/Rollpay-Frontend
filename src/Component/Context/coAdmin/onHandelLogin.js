@@ -7,7 +7,7 @@ const onLoginHandleCoAdmin = async (setCoToken,backendURL,email, password,naviga
         const {data} = await axios.post(backendURL+'/coadmin/login',{email, password})
         console.log("data : ", data);
         if(data.success){
-            setCoToken(data.adminToken);
+            setCoToken(data.cotoken);
             localStorage.setItem('cotoken', data.cotoken);
             navigate('/');
             // toast.success(data.message);

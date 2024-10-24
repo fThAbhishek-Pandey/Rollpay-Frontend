@@ -11,7 +11,7 @@ const Sidebar = () => {
         </Link>
       </li>
       <li className="text-lg">
-        <Link to="/history" className="flex items-center space-x-2">
+        <Link to="/employee" className="flex items-center space-x-2">
           <span>📜</span>
           <span>Employee List</span>
         </Link>

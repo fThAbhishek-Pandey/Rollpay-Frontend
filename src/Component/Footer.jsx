@@ -14,17 +14,18 @@ const Footer = () => {
             </div>
             <div className="grid grid-cols-2 gap-96">
               <div className="space-y-2">
-                <p className="text-black font-semibold">GET IN TOUCH</p>
+                <p className="text-black font-semibold">Contact Us</p>
                 <a href="https://www.linkedin.com/company/sdcrecabn" className="hover:text-black block">LinkedIn</a>
-                <a href="tel:+918467865427" className="hover:text-black block">Number</a>
-                <a href="mailto:abhishek830564@email.com" className="hover:text-black block">Email</a>
+                <a href="tel:+918467865427" className="hover:text-black block">+91 8467865427</a>
+                <a href="mailto:abhishek830564@email.com" className="hover:text-black block">abhishek830564@gmail.com</a>
               </div>
               <div className="space-y-2 ">
-                <p className="text-black font-semibold">QUICK LINK</p>
+                <p className="text-black font-semibold">Special Thanks by &#10084;&#65039; </p>
                 <ul>
-                  <li><Link  to='/'  className="hover:text-black">Dashboard</Link ></li>
-                  <li><Link  to='/add-employ'  className="hover:text-black">Add Employee</Link ></li>
-                  <li> <Link to='/history'   className="hover:text-black">Histroy</Link ></li>
+                  <li><a href='https://www.linkedin.com/in/kusum-91a843266/'   className="hover:text-black">Kusum Gupta</a ></li>
+                  <li><a  href='https://www.linkedin.com/in/vishalprajapati15/'  className="hover:text-black">Vishal Prajapati</a ></li>
+                  <li><a  href='https://www.linkedin.com/in/abhishek-pandey2005/'  className="hover:text-black">Abhishek Pandey</a ></li>
+                  <li><a  href='https://www.linkedin.com/in/sneha-prajapati-1a165a27b/'  className="hover:text-black">Sneha Prajapati</a ></li>
                 </ul>
               </div>
             </div>
