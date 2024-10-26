@@ -12,9 +12,9 @@ const AdminHome = () => {
   return (
     <div>
             <Navbar />
-            <div className='flex'>
+            <div className='flex justify-start'>
             <Sidebar/>
-             <div>
+             <div  className='w-full' > 
               <Routes>
                 <Route path='/' element={<Dashboard/>} />
                 <Route path='/mailer' element={<Mailer/>} />
