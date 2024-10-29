@@ -11,10 +11,10 @@ const Sidebar = () => {
         </Link>
       </li>
       <li className="text-lg">
-        <Link to="/add-employ" className="flex items-center space-x-2">
+      <Link to="/employee-list" className="flex items-center space-x-2">
           <span>👤</span>
-          <span>Add Employee</span>
-        </Link>
+          <span>All Employee</span>
+        </Link> 
       </li>
       <li className="text-lg">
         <Link to="/send-email" className="flex items-center space-x-2">
@@ -22,6 +22,10 @@ const Sidebar = () => {
           <span>Send Email</span>
         </Link>
       </li>
+      <Link to="/add-employ" className="flex items-center space-x-2">
+          <span>👤</span>
+          <span>Add Employee</span>
+        </Link>
       <li className="text-lg">
         <Link to="/history" className="flex items-center space-x-2">
           <span>📜</span>

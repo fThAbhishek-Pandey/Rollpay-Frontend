@@ -8,6 +8,7 @@ import Footer from '../../Component/Footer';
 import Dashboard from './Dashboard';
 import AddEmploy from './AddEmploy';
 import Mailer from './Mailer';
+import EmployeeProfile from './EmployeeDetails';
 const AdminHome = () => {
   return (
     <div>
@@ -20,6 +21,7 @@ const AdminHome = () => {
                 <Route path='/mailer' element={<Mailer/>} />
                 <Route path='/add-employ' element={<AddEmploy/>} />
                 <Route path='/employee-list' element={<EmployeList/>} />
+                <Route path='/profile/:id' element={<EmployeeProfile/>} />
                 <Route path='/history' element={<History/>} />
               </Routes>
              </div>
