@@ -9,6 +9,7 @@ export const AdminContext = createContext(1);
 const  AdminContextProvider = (props) => {
   const [adminToken, setAdminToken] = useState(localStorage.getItem('adminToken')||'');
   const [reciptHistory, setReciptHistoy] = useState(false);
+  
   const navigate= useNavigate();
   const backendURL= import.meta.env.VITE_BACKEND_URL
   console.log(backendURL)
@@ -21,8 +22,8 @@ const handelLogout = ()=>{
 const handelRecieptHistory = async ()=>{
        await onHandleHistroy(backendURL,adminToken,setReciptHistoy)
 }
- const handelAddEmploy = async (employeeData)=>{
-      await onHandleAddEmploy(employeeData,backendURL, adminToken,navigate);
+ const handelAddEmploy = async (recipt_Id)=>{
+      await onHandleAddEmploy(recipt_Id,backendURL, adminToken,navigate);
  }
 
 

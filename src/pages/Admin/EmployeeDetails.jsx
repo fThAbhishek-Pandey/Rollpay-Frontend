@@ -1,6 +1,8 @@
 // import { PaperClipIcon } from '@heroicons/react/20/solid'
-
+import {useParams} from 'react-router-dom'
 export default function EmployeeProfile() {
+  const {id}= useParams();
+
   return (
     <div>
       <div className="px-4 sm:px-0">

@@ -17,7 +17,7 @@ const Sidebar = () => {
         </Link> 
       </li>
       <li className="text-lg">
-        <Link to="/send-email" className="flex items-center space-x-2">
+        <Link to="/mailer" className="flex items-center space-x-2">
           <span>📧</span>
           <span>Send Email</span>
         </Link>
