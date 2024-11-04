@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import onLogoutHandel from "../Component/Context/Admin/onLogoutHandel";
 import onHandleAddEmploy from "../Component/Context/Admin/AddEmploy";
 import onHandleHistroy from "../Component/Context/Admin/history";
+import Mailer from "../Component/Admin/Mailer/mailer";
 export const AdminContext = createContext(1);
 
 const  AdminContextProvider = (props) => {
@@ -26,7 +27,9 @@ const handelRecieptHistory = async ()=>{
       await onHandleAddEmploy(recipt_Id,backendURL, adminToken,navigate);
  }
 
-
+const hadelMailer = async (reciept_id)=>{
+     await Mailer (backendURL, adminToken,reciept_id);
+}
 
 
 
@@ -41,7 +44,8 @@ const handelRecieptHistory = async ()=>{
         handelLogout,
         handelAddEmploy,
         handelRecieptHistory,
-        reciptHistory
+        reciptHistory,
+        hadelMailer
      }
   return (
     <>

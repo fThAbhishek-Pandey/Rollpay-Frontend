@@ -5,14 +5,14 @@ const Navbar = () => {
   const {handelLogout,  adminToken} = useContext(AdminContext);
   const {handleLogoutCoAdmin,cotoken} = useContext(CoAdminContext)
   return (
-      <nav className="bg-slate-100 flex justify-between m-5">
-        <div className="flex gap-2">
-            <h1 className="text-4xl border-4 bg-slate-50 rounded-lg ">Admin Panal</h1>
+      <nav className="bg-blue-100 flex justify-between">
+        <div className="gap-2 inline-block p-1 m-3">
+            <h1 className="text-4xl border-blue-500 p-3 border-4 bg-slate-50 rounded-lg ">{adminToken && <h2>Admin Panel</h2>}{cotoken && <h2>CoAdmin Panel</h2>}</h1>
         </div>
         <button onClick={()=>{
           if( adminToken)  handelLogout()
          else if (cotoken) handleLogoutCoAdmin()
-          }} className="block text-xl bg-indigo-500 rounded-md px-2 cursor-pointer">Logout</button>
+          }} className="block text-xl bg-blue-500 rounded-md p-2 m-6  cursor-pointer">Logout</button>
     </nav>
   )
 }

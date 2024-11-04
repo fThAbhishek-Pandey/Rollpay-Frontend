@@ -1,36 +1,36 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Sidebar = () => {
   return (
-    <div className="w-3/7 bg-gray-100 h-screen p-5 shadow-md">
+    <div className="w-1/4 bg-blue-100 h-screen p-5 shadow-md">
     <ul className="space-y-4">
       <li className="text-lg">
-        <Link to="/" className="flex items-center space-x-2">
+        <NavLink to="/" className={({isActive})=>(`flex items-center space-x-2 p-2 ${isActive?'bg-blue-500 rounded':''}`)}>
           <span>📊</span>
           <span>Dashboard</span>
-        </Link>
+        </NavLink>
       </li>
       <li className="text-lg">
-      <Link to="/employee-list" className="flex items-center space-x-2">
+      <NavLink to="/employee-list" className={({isActive})=>(`flex items-center space-x-2 p-2 ${isActive?'bg-blue-500 rounded':''}`)}>
           <span>👤</span>
           <span>All Employee</span>
-        </Link> 
+        </NavLink> 
       </li>
       <li className="text-lg">
-        <Link to="/mailer" className="flex items-center space-x-2">
+        <NavLink to="/mailer" className={({isActive})=>(`flex items-center space-x-2 p-2 ${isActive?'bg-blue-500 rounded':''}`)}>
           <span>📧</span>
           <span>Send Email</span>
-        </Link>
+        </NavLink>
       </li>
-      <Link to="/add-employ" className="flex items-center space-x-2">
+      <NavLink to="/add-employ" className={({isActive})=>(`flex items-center space-x-2 p-2 ${isActive?'bg-blue-500 rounded':''}`)}>
           <span>👤</span>
           <span>Add Employee</span>
-        </Link>
+        </NavLink>
       <li className="text-lg">
-        <Link to="/history" className="flex items-center space-x-2">
+        <NavLink to="/history" className={({isActive})=>(`flex items-center space-x-2 p-2 ${isActive?'bg-blue-500 rounded':''}`)}>
           <span>📜</span>
           <span>History</span>
-        </Link>
+        </NavLink>
       </li>
     </ul>
   </div>
