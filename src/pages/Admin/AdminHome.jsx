@@ -8,18 +8,20 @@ import Footer from '../../Component/Footer';
 import Dashboard from './Dashboard';
 import AddEmploy from './AddEmploy';
 import Mailer from './Mailer';
+import EmployeeProfile from './EmployeeDetails';
 const AdminHome = () => {
   return (
     <div>
             <Navbar />
-            <div className='flex'>
+            <div className='flex justify-start'>
             <Sidebar/>
-             <div>
+             <div  className='w-full' > 
               <Routes>
                 <Route path='/' element={<Dashboard/>} />
                 <Route path='/mailer' element={<Mailer/>} />
                 <Route path='/add-employ' element={<AddEmploy/>} />
                 <Route path='/employee-list' element={<EmployeList/>} />
+                <Route path='/profile/:id' element={<EmployeeProfile/>} />
                 <Route path='/history' element={<History/>} />
               </Routes>
              </div>

@@ -9,7 +9,7 @@ const onHandleAddEmploy = async (employeeData, backendURL,adminToken,navigate)=>
             }
             else{
                 toast.error(data.message)
-                navigate('/')
+                navigate('/add-employ')
             }
             
          } catch (error) {
