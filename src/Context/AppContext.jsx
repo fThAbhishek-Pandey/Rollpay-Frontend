@@ -11,7 +11,8 @@ const handelAllEmployee = async ()=>{
    await  onHandleAllEmploy(backendURL,setAllEmployee)
 }
 const handelEmployee = async(emp_id)=>{
-     await onHandleEmployee(emp_id,backendURL,setAllEmployee);
+  console.log("handelEmployee",emp_id, )
+     await onHandleEmployee(emp_id,backendURL,setEmployee);
 }
      const value = {
       allEmployee, 

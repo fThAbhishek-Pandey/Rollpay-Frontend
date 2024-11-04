@@ -1,11 +1,12 @@
 import axios from "axios"
 import {toast} from 'react-toastify'
-const onHandleEmployee = async (backendURL,setAllEmployee)=>{
+const onHandleEmployee = async (emp_id,backendURL,setEmployee)=>{
          try {
-            const {data} = await axios.get(backendURL+'/app/all-eployees')
+            const {data} = await axios.get(backendURL+'/app/employee', {emp_id})
+            console.log(data)
             if(data.success){
-                setAllEmployee(data.employees)
-                toast.success("successfully")
+                setEmployee(data.myemployee)
+                toast.success("successfully get data")
             }
             else{
                 toast.error(data.message)

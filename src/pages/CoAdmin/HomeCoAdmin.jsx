@@ -10,13 +10,13 @@ const HomeCoAdmin = () => {
   return (
     <div>
          <Navbar/>
-         <div className='flex'>
+         <div className='flex '>
           <Sidebar />
-          <div>
+          <div className='w-full'>
          <Routes>
           <Route path='/' element={<Dashboard/>}></Route>
           <Route path='/employee' element={<Employee/>}></Route>
-          <Route path='/profile/:epm_id' element={<EmployeeForm/>}></Route>
+          <Route path='/profile/:emp_id' element={<EmployeeForm/>}></Route>
         </Routes>
          </div>
          </div>
