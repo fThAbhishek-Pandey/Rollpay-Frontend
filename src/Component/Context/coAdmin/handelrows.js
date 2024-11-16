@@ -6,7 +6,8 @@
       rows.push(index);
       data.push([
         { value: item.name, readOnly: true },
-        { value: item._id, readOnly: true },
+        { value: item.emp_id, readOnly: true },
+        {value: item.design, readOnly:true},
         { value: "" },
         { value: "" },
         { value: "" },

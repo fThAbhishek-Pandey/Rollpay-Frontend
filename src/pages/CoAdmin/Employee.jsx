@@ -1,14 +1,12 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
-import { CoAdminContext } from "../../Context/CoAdmin";
 import Spreadsheet from "react-spreadsheet";
-import { AppContext } from "../../Context/AppContext";
-
+import { CoAdminContext } from "../../Context/CoAdmin";
+import MonthSalaryjson from "../../Component/CoAdmin/ManthSalaryjson";
 const EmployeList = () => {
-  const { Data, rowLabels , handelAllEmployee } = useContext(AppContext);
-  const { handelRecieptSave } = useContext(CoAdminContext);
+  const { Data, rowLabels, handelSpreadData, handelRecieptSave } = useContext(CoAdminContext);
     // Fetch all employees on component mount
     useEffect(() => {
-      handelAllEmployee();
+      handelSpreadData();
     }, []);
   console.log("employee : ", Data,rowLabels )
   const [spreadData, setSpreadData] = useState(Data);
@@ -16,6 +14,7 @@ const EmployeList = () => {
   const columnLabels = [
     "Name",
     "Employee Id",
+    "Designation",
     "Basic Pay",
     "DA",
     "HRA",
@@ -23,38 +22,22 @@ const EmployeList = () => {
     "electric Charge",
     "nps_per",
   ];
-
-  // Function to generate JSON data from the spreadsheet
-  const CreateJson = () => {
-    // const JsonData = data.map((row) => ({
-    //   name: row[0]?.value || "",
-    //   emp_id: row[1]?.value || "",
-    //   pay: row[2]?.value || "",
-    //   DA: row[3]?.value || "",
-    //   HRA: row[4]?.value || "",
-    //   dec_depart: row[5]?.value || "",
-    //   ele_ch: row[6]?.value || "",
-    //   nps_per: row[7]?.value || "",
-    // }));
-    // setJsonData(JsonData);
-    console("json data : ",spreadData )
-  };
-console.log("re render")
-
+  console.log("re render")
   // Handle spreadsheet changes
   const onSpreadsheetChange = (updatedData) => {
     console.log("updatedData : ", updatedData);
     setSpreadData(updatedData); // Update the spreadsheet data
+    
   };
 
   // Handle save button click
   const onhadelRecieptSave = (e) => {
-    e.preventDefault();
-    CreateJson();
+    // e.preventDefault();
     console.log("Submitting JSON Data: ", spreadData);
-    // handelRecieptSave(jsonData); // Save the JSON data
+    MonthSalaryjson(spreadData, setJsonData)
+    console.log("abghi",jsonData );
   };
-
+  console.log("jsonSata : ",jsonData );
   return (
     spreadData && (
       <div>
