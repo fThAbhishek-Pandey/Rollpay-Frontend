@@ -1,8 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import onLoginHandleCoAdmin from "../Component/Context/coAdmin/onHandelLogin";
 import {useNavigate}  from 'react-router-dom'
 import onLogoutHandel from "../Component/Context/coAdmin/onLogout";
 import SaveReciept from "../Component/CoAdmin/SaveReciept";
+
 export const CoAdminContext = createContext();
 
 const CoAdminContextProvider= (props) => {
@@ -18,6 +19,7 @@ const CoAdminContextProvider= (props) => {
 const handelRecieptSave = async(RecieptData)=>{
     await  SaveReciept(backendURL,cotoken,RecieptData )
 }
+
      const value = {
         cotoken, 
         setCotoken,
@@ -25,7 +27,7 @@ const handelRecieptSave = async(RecieptData)=>{
         handleLogoutCoAdmin,
         handelRecieptSave
      }
-  
+
   return (
     <>
       <CoAdminContext.Provider value={value}>

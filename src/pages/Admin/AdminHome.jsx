@@ -9,6 +9,7 @@ import Dashboard from './Dashboard';
 import AddEmploy from './AddEmploy';
 import Mailer from './Mailer';
 import EmployeeProfile from './EmployeeDetails';
+import MailDetails from './mailDetail';
 const AdminHome = () => {
   return (
     <div>
@@ -22,6 +23,7 @@ const AdminHome = () => {
                 <Route path='/add-employ' element={<AddEmploy/>} />
                 <Route path='/employee-list' element={<EmployeList/>} />
                 <Route path='/profile/:id' element={<EmployeeProfile/>} />
+                <Route path='/profile/:emp_id/:reciept_id' element={<MailDetails/>} />
                 <Route path='/history' element={<History/>} />
               </Routes>
              </div>

@@ -5,7 +5,7 @@ const onHandleEmployee = async (emp_id,backendURL,setEmployee)=>{
             const {data} = await axios.get(backendURL+'/app/employee', {emp_id})
             console.log(data)
             if(data.success){
-                setEmployee(data.myemployee)
+            setEmployee(data.myemployee)
                 toast.success("successfully get data")
             }
             else{
