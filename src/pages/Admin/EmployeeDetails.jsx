@@ -1,35 +1,38 @@
 // import { PaperClipIcon } from '@heroicons/react/20/solid'
 import {useParams} from 'react-router-dom'
+import { AppContext } from '../../Context/AppContext';
+import { useContext } from 'react';
 export default function EmployeeProfile() {
-  const {id}= useParams();
+  const {id}= useParams(); 
+  const {handelEmployee,employee} = useContext(AppContext)
+  //  console.log("employee02 : ",employee)
+useEffect(()=>{
+handelEmployee(id);
+},[id])
+  return (   !(employee && employee.emp_id)  ? <p>Employee does not exist</p>: (
+    <div >
 
-  return (
-    <div>
-      <div className="px-4 sm:px-0">
-        <h3 className="text-base font-semibold leading-7 text-gray-900">Applicant Information</h3>
-        <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Personal details and application.</p>
-      </div>
-      <div className="mt-6 border-t border-gray-100">
-        <dl className="divide-y divide-gray-100">
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">Full name</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Margot Foster</dd>
+        <div className='flex justify-start gap-9 bg-blue-50 p-5 m-5 rounded' >
+          <div>
+            <p className='p-2 m-2 bg-blue-200 rounded' >Name</p>
+            <p className='p-2 m-2 bg-blue-200 rounded' >Employee ID</p>
+            <p className='p-2 m-2 bg-blue-200 rounded' >Designation</p>
+            <p className='p-2 m-2 bg-blue-200 rounded' >Department</p>
           </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">Application for</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Backend Developer</dd>
+          <div>
+            <p className='p-2 m-2 bg-blue-200 rounded'  >{employee.name}</p>
+            <p className='p-2 m-2 bg-blue-200 rounded'  >{employee.emp_id}</p>
+            <p className='p-2 m-2 bg-blue-200 rounded'  >{employee.design }</p>
+            <p className='p-2 m-2 bg-blue-200 rounded'  >{employee.depart}</p>
           </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">Email address</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">margotfoster@example.com</dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">Salary expectation</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">$120,000</dd>
-          </div>
-          
-        </dl>
-      </div>
-    </div>
+        </div>
+        <div>
+        <p className='p-2 m-2 bg-blue-200 rounded'  >{employee.depart}</p>
+        <p className='p-2 m-2 bg-blue-200 rounded'  >{employee.depart}</p>
+        <p className='p-2 m-2 bg-blue-200 rounded'  >{employee.depart}</p>
+        <p className='p-2 m-2 bg-blue-200 rounded'  >{employee.depart}</p>
+        </div>
+        </div>
   )
+)
 }

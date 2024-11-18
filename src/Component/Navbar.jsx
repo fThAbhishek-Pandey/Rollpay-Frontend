@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
       <nav className="bg-blue-100 flex justify-between">
         <div className="gap-2 inline-block p-1 m-3">
-            <h1 className="text-4xl border-blue-500 p-3 border-4 bg-slate-50 rounded-lg ">{adminToken && <h2>Admin Panel</h2>}{cotoken && <h2>CoAdmin Panel</h2>}</h1>
+            <h1 className="text-4xl border-blue-500 p-3 border-4 bg-slate-50 rounded-lg ">{adminToken && <p>Admin Panel</p>}{cotoken && <p>CoAdmin Panel</p>}</h1>
         </div>
         <button onClick={()=>{
           if( adminToken)  handelLogout()

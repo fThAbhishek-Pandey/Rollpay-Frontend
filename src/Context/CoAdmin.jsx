@@ -1,12 +1,17 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import onLoginHandleCoAdmin from "../Component/Context/coAdmin/onHandelLogin";
 import {useNavigate}  from 'react-router-dom'
 import onLogoutHandel from "../Component/Context/coAdmin/onLogout";
 import SaveReciept from "../Component/CoAdmin/SaveReciept";
+import fetchSpreadData from "../Component/CoAdmin/spreadData";
+import HandelRows from "../Component/Context/coAdmin/handelrows";
 export const CoAdminContext = createContext();
 
 const CoAdminContextProvider= (props) => {
   const [cotoken, setCotoken] = useState(localStorage.getItem('cotoken')||'');
+  const [spreadData, setSpreadData] = useState([]);
+  const [Data, setData] = useState([]);
+  const [rowLabels, setRowlobels] = useState([]);
   const navigate =  useNavigate()
   const backendURL= import.meta.env.VITE_BACKEND_URL
  const handleLoginCoAdmin = async(email, password,)=>{
@@ -18,14 +23,26 @@ const CoAdminContextProvider= (props) => {
 const handelRecieptSave = async(RecieptData)=>{
     await  SaveReciept(backendURL,cotoken,RecieptData )
 }
+const handelSpreadData = ()=>{
+  fetchSpreadData(backendURL,cotoken,setSpreadData);
+}
+const onhadelData = ()=>{
+  HandelRows(spreadData,setData,setRowlobels);
+}
+useEffect(()=>{
+if (spreadData)  onhadelData();
+}, [spreadData]);
      const value = {
         cotoken, 
         setCotoken,
         handleLoginCoAdmin,
         handleLogoutCoAdmin,
-        handelRecieptSave
+        handelRecieptSave,
+        handelSpreadData,
+        Data,
+        rowLabels
      }
-  
+
   return (
     <>
       <CoAdminContext.Provider value={value}>
