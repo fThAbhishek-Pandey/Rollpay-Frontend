@@ -21,6 +21,7 @@ const EmployeList = () => {
     "dec_depart",
     "electric Charge",
     "nps_per",
+    "nps_rupee"
   ];
   console.log("re render")
   // Handle spreadsheet changes

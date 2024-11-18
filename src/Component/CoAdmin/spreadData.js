@@ -2,7 +2,7 @@ import axios from "axios"
 import {toast} from 'react-toastify'
 const fetchSpreadData = async (backendURL,cotoken,setSpreadData)=>{
          try {
-            const {data} = await axios.get(backendURL+'/coadmin/spreaddata',{headers:{cotoken}});
+            const {data} = await axios.get(backendURL+'/coadmin/getspread',{headers:{cotoken}});
            console.log("data", data);
             if(data.success){
                 setSpreadData(data.data)

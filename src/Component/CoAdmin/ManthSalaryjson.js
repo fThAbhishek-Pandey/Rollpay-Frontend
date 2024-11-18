@@ -9,6 +9,7 @@ const MonthSalaryjson = (data,setJsonData) => {
           dec_depart: row[5]?.value || "",
           ele_ch: row[6]?.value || "",
           nps_per: row[7]?.value || "",
+          nps_rupee: row[8]?.value || "",
         }));
         setJsonData(JsonData);
         console.log("json data : ", JsonData)
