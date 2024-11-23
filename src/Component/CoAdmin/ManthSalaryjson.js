@@ -1,18 +1,23 @@
 
-const MonthSalaryjson = (data,setJsonData) => {
-     const JsonData = data.map((row) => ({
+const MonthSalaryjson = (data,month, setJsonData) => {
+     const employeeData = data.map((row) => ({
           name: row[0]?.value || "",
           emp_id: row[1]?.value || "",
-          pay: row[2]?.value || "",
-          DA: row[3]?.value || "",
-          HRA: row[4]?.value || "",
-          dec_depart: row[5]?.value || "",
-          ele_ch: row[6]?.value || "",
-          nps_per: row[7]?.value || "",
-          nps_rupee: row[8]?.value || "",
+          design: row[2]?.value || "",
+          pay: row[3]?.value || "",
+          DA: row[4]?.value || "",
+          HRA: row[5]?.value || "",
+          dec_depart: row[6]?.value || "",
+          ele_ch: row[7]?.value || "",
+          nps_per: row[8]?.value || "",
+          nps_rupee: row[9]?.value || "",
         }));
-        setJsonData(JsonData);
-        console.log("json data : ", JsonData)
+         const jsondata = {
+              month: month,
+              employee: employeeData
+         }
+        setJsonData(jsondata);
+        console.log("json data : ", jsondata);
 }
 
 export default MonthSalaryjson

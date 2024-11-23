@@ -11,13 +11,15 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
+    "file-saver": "^2.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.27.0",
     "react-spreadsheet": "^0.9.5",
     "react-toastify": "^10.0.6",
-    "scheduler": "^0.23.2"
+    "scheduler": "^0.23.2",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
