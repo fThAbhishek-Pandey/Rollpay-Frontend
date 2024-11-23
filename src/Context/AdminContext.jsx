@@ -5,12 +5,13 @@ import onLogoutHandel from "../Component/Context/Admin/onLogoutHandel";
 import onHandleAddEmploy from "../Component/Context/Admin/AddEmploy";
 import onHandleHistroy from "../Component/Context/Admin/history";
 import Mailer from "../Component/Admin/Mailer/mailer";
+import GetMonth from "../Component/Admin/months/getmonths";
 export const AdminContext = createContext(1);
 
 const  AdminContextProvider = (props) => {
   const [adminToken, setAdminToken] = useState(localStorage.getItem('adminToken')||'');
   const [reciptHistory, setReciptHistoy] = useState(false);
-  
+  const [months, setMonths] = useState([]);
   const navigate= useNavigate();
   const backendURL= import.meta.env.VITE_BACKEND_URL
   console.log(backendURL)
@@ -30,7 +31,9 @@ const handelRecieptHistory = async ()=>{
 const hadelMailer = async (reciept_id)=>{
      await Mailer (backendURL, adminToken,reciept_id);
 }
-
+const HandleMonth =()=>{
+  GetMonth(backendURL, adminToken,setMonths);
+}
 
 
 
@@ -45,7 +48,9 @@ const hadelMailer = async (reciept_id)=>{
         handelAddEmploy,
         handelRecieptHistory,
         reciptHistory,
-        hadelMailer
+        hadelMailer,
+        HandleMonth,
+        months
      }
   return (
     <>

@@ -10,6 +10,7 @@ import AddEmploy from './AddEmploy';
 import Mailer from './Mailer';
 import EmployeeProfile from './EmployeeDetails';
 import MailDetails from './mailDetail';
+import Months from './months';
 const AdminHome = () => {
   return (
     <div>
@@ -25,6 +26,8 @@ const AdminHome = () => {
                 <Route path='/profile/:id' element={<EmployeeProfile/>} />
                 <Route path='/profile/:emp_id/:reciept_id' element={<MailDetails/>} />
                 <Route path='/history' element={<History/>} />
+                <Route path='/months' element={<Months/>} />
+                <Route path='/months/:month_id' element={<EmployeList/>} />
               </Routes>
              </div>
             </div>
