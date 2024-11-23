@@ -5,6 +5,7 @@ import onLogoutHandel from "../Component/Context/coAdmin/onLogout";
 import SaveReciept from "../Component/CoAdmin/SaveReciept";
 import fetchSpreadData from "../Component/CoAdmin/spreadData";
 import HandelRows from "../Component/Context/coAdmin/handelrows";
+import CreateSpread from "../Component/CoAdmin/createSpread";
 export const CoAdminContext = createContext();
 
 const CoAdminContextProvider= (props) => {
@@ -20,18 +21,20 @@ const CoAdminContextProvider= (props) => {
   const handleLogoutCoAdmin = ()=>{
      onLogoutHandel (setCotoken,navigate);
 }
-const handelRecieptSave = async(RecieptData)=>{
-    await  SaveReciept(backendURL,cotoken,RecieptData )
-}
 const handelSpreadData = ()=>{
   fetchSpreadData(backendURL,cotoken,setSpreadData);
 }
 const onhadelData = ()=>{
   HandelRows(spreadData,setData,setRowlobels);
 }
+
 useEffect(()=>{
 if (spreadData)  onhadelData();
 }, [spreadData]);
+const handelRecieptSave = async(myspreadData)=>{
+  console.log("my spread data : ",myspreadData)
+  await  CreateSpread(backendURL,cotoken,myspreadData);
+}
      const value = {
         cotoken, 
         setCotoken,
