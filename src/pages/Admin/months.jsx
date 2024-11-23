@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import { AdminContext } from '../../Context/AdminContext'
+import { useNavigate } from 'react-router-dom'
 const Months = () => {
     const {HandleMonth,months} = useContext(AdminContext)
+    const navigate =useNavigate();
     useEffect(()=>{
         HandleMonth()
     },[])
@@ -13,7 +15,7 @@ const Months = () => {
             <div  className='bg-blue-200 m-5 p-5 rounded border-2 border-blue-900' key={idx}>
                <p className='text-lg px-1'> {monthsName[item.month]}</p> 
                <h2 className='text-3xl px-2'>2024</h2>
-               <button className='text-right bg-blue-400 hover:bg-blue-600 rounded text-sm text-white px-2 py-1 my-3'>send mail</button>
+               <button onClick={()=>navigate(`/months/${item.month_id}`)} className='text-right bg-blue-400 hover:bg-blue-600 rounded text-sm text-white px-2 py-1 my-3'>Send Mail</button>
             </div>
         ))}
     </div>

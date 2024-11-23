@@ -22,12 +22,6 @@ const Sidebar = () => {
           <span>All Months</span>
         </NavLink>
       </li>
-      <li className="text-lg">
-        <NavLink to="/mailer" className={({isActive})=>(`flex items-center space-x-2 p-2 ${isActive?'bg-blue-500 rounded':''}`)}>
-          <span>📧</span>
-          <span>Send Email</span>
-        </NavLink>
-      </li>
       <NavLink to="/add-employ" className={({isActive})=>(`flex items-center space-x-2 p-2 ${isActive?'bg-blue-500 rounded':''}`)}>
           <span>👤</span>
           <span>Add Employee</span>
