@@ -1,9 +1,9 @@
 import axios from "axios"
 import { toast } from "react-toastify"
-const Mailer = async (backendURL, adminToken,reciept_id) => {
-  console.log("Mailer --> ",backendURL, adminToken,reciept_id)
+const Mailer = async (backendURL, adminToken,sheet_id,employee) => {
+  console.log("Mailer --> ",backendURL,adminToken,employee)
    try {
-    const {data} = await axios.post(backendURL+'/admin/mail',{recipt_Id :reciept_id}, {headers:{admintoken:adminToken}});
+    const {data} = await axios.post(backendURL+'/admin/mail/one',{sheet_id,employee}, {headers:{admintoken:adminToken}});
     if(data.success){
       toast.success(data.message);
     }
@@ -14,7 +14,6 @@ const Mailer = async (backendURL, adminToken,reciept_id) => {
     console.log(error);
     toast.error(error.message);
    }
-  
 }
 
 export default Mailer
