@@ -6,6 +6,8 @@ import { AppContext } from "../../Context/AppContext";
 const MailDetails = () => {
   // const { emp_id, reciept_id } = useParams();
   // const { handelEmployee, employee } = useContext(AppContext);
+  const {emp_id,reciept_id}= useParams();
+  console.log(emp_id, reciept_id)
   // const {reciptHistory,handelRecieptHistory, hadelMailer} = useContext(AdminContext);
   // //  console.log("employee02 : ",employee)
   // const reciept = reciptHistory.filter((item)=>item._id === reciept_id )

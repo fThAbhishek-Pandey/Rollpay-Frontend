@@ -7,6 +7,7 @@ import onHandleHistroy from "../Component/Context/Admin/history";
 import Mailer from "../Component/Admin/Mailer/mailer";
 import GetMonth from "../Component/Admin/months/getmonths";
 import SalaryData from "../Component/Admin/months/monthSalary";
+import MailerGP from "../Component/Admin/Mailer/gpmailer";
 export const AdminContext = createContext(1);
 
 const  AdminContextProvider = (props) => {
@@ -30,8 +31,11 @@ const handelRecieptHistory = async ()=>{
       await onHandleAddEmploy(recipt_Id,backendURL, adminToken,navigate);
  }
 
-const hadelMailer = async (reciept_id)=>{
-     await Mailer (backendURL, adminToken,reciept_id);
+const hadelMailer = async (sheet_id,employees)=>{
+     await Mailer (backendURL, adminToken,sheet_id,employees);
+}
+const hadelMailerGP = async (sheet_id,employees)=>{
+  await MailerGP (backendURL, adminToken,sheet_id,employees);
 }
 const HandleMonth =()=>{
   GetMonth(backendURL, adminToken,setMonths);
@@ -56,7 +60,8 @@ const handelMonthSalary =(month_id)=>{
         HandleMonth,
         months,
         handelMonthSalary,
-        salaryData
+        salaryData,
+        hadelMailerGP
      }
   return (
     <>
