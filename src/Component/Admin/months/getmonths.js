@@ -9,7 +9,7 @@ const GetMonth = async (backendURL, adminToken,setMonths ) => {
         toast.success("get all months");
     }
     else {
-        toast.error("not all months");
+        toast.error("no months founds");
     }
   } catch (error) {
     toast.error(message.error);
